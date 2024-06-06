@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Python to JavaScript with Brython</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.9.5/brython.min.js"></script>
+</head>
+<body onload="brython()">
+    <h1 id="message"></h1>
+
+    <script type="text/python">
+        from browser import document, window, html
+        from main import phoneno
+        # Simulating the phoneno variable from main.py
+        # phoneno = "2123456789"  # Replace with actual import if available
+
+        # Set the phone number to the message element
+        document["message"].textContent = phoneno
+
+        # Function to send a WhatsApp message
+        def send_message():
+            phone_number = document["message"].textContent
+            message = "السلام عليكم ورحمة لله وبركاته"
+            url = f'https://wa.me/{phone_number}?text={window.encodeURIComponent(message)}'
+            window.open(url, '_blank')
+
+        # Call the function when the page loads
+        send_message()
+
+    </script>
+</body>
+</html>

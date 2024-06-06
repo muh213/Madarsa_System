@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Send WhatsApp Message</title>
+<link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+
+<script>
+function sendMessage() {
+  var phoneNumber = '+923367266620'; 
+  var message = ".اسلام عليكم ورحمة لله وبركاته"
+  var url = 'https://wa.me/' + phoneNumber + '?text=' + encodeURIComponent(message);
+  window.open(url, '_blank');
+}
+
+// page loads
+sendMessage();
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,42 @@
+Setting Up the Project Environment
+
+Prerequisites
+
+Python installed on your system
+Step 1: *Create a Virtual Environment*
+
+Open a Command Prompt (cmd) and navigate to the project folder using the cd command.
+
+Command: python -m venv .venv
+
+Result: A new folder named .venv will be created in your current folder.
+
+Step 2: Activate the Virtual Environment
+
+Command: .venv\Scripts\activate
+
+Result: The activate script in the virtual environment folder will run, and your terminal will now point to a new version of Python located at .venv\Scripts\python.exe.
+
+Step 3: Install Required Packages
+
+Command: python get-pip.py
+
+Result: The get-pip.py script will install the latest version of pip.
+
+Command: pip install numpy
+
+Result: The NumPy package will be installed.
+
+Command: pip install pyzbar
+
+Result: The PyZBar package will be installed.
+
+Command: pip install opencv-python
+
+Result: The OpenCV package will be installed.
+
+Command: pip install pyserial
+
+Result: The pyserial package will be installed.
+
+Note: Make sure to run these commands in the correct order to ensure a successful setup.

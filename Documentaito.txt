@@ -1,0 +1,18 @@
+Asuming you have python installed, open cmd (Command Prompt). Use cd to get to the project folder. 
+Then type:
+python -m venv .venv
+
+When you do this, you should see a new folder .venv created in your current folder. Now type:
+
+.venv\Scripts\activate
+This runs the activate script in our virtual environment folder, which means our terminal is n	ow pointing at a new version of python that is located at .venv\Scripts\python.exe
+
+
+Now run:
+python get-pip.py
+Then
+pip install numpy
+pip install pyzbar
+pip install pyzbar
+pip install opencv-python
+pip install stepper

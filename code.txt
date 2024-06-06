@@ -1,0 +1,27 @@
+import pyduinocli
+
+arduino = pyduinocli.Arduino("code.ino")
+boards = arduino.board.list()
+
+# assuming we are using the first board listed
+if "result" in boards and len(boards["result"]) > 0:
+    board_info = boards["result"][0]
+    if "port" in board_info and "address" in board_info["port"]:
+        port = board_info["port"]["address"]
+    else:
+        print("Port address not found")
+        port = None
+
+    if "matching_boards" in board_info and len(board_info["matching_boards"]) > 0:
+        fqbn = board_info["matching_boards"][0]["fqbn"]
+    else:
+        print("FQBN not found")
+        fqbn = None
+
+    if port and fqbn:
+        arduino.compile(fqbn=fqbn, sketch="upload_me")
+        arduino.upload(fqbn=fqbn, sketch="upload_me", port=port)
+    else:
+        print("Cannot compile and upload due to missing port or FQBN")
+else:
+    print("No boards found")
